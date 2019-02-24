@@ -1,11 +1,17 @@
 import React from "react"
 
-const Hello = function(props) {
-  return (
-    <div id="app" onClick={() => console.log("clicked !")}>
-      hello ssr {props.name}
-    </div>
-  )
+class Hello extends React.Component {
+  componentDidMount() {
+    console.log("mounted !")
+  }
+
+  render() {
+    return (
+      <div onClick={() => console.log("clicked !")}>
+        hello {this.props.name}
+      </div>
+    )
+  }
 }
 
 export default Hello

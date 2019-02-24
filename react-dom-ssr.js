@@ -13,7 +13,7 @@ app.get("/app.bundle.js", function(req, res) {
 
 // static
 app.get("/hello/:name", function(req, res) {
-  return res.send("hello " + req.params.name)
+  return res.send("<div>hello " + req.params.name + "</div>")
 })
 
 // ssr
