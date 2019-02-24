@@ -27,10 +27,11 @@ app.get("/hello-ssr-hydrate/:name", function(req, res) {
     <Hello name={req.params.name} />
   )
 
-  // 将页面中主要的部分替换
   let content = fs.readFileSync("./index.html", "utf8")
 
+  // 将页面中主要的部分替换
   content = content.replace("{{app}}", reactString)
+
   // 属性复制到脚本标签中
   content = content.replace(
     "{{props}}",
