@@ -8,6 +8,4 @@ const container = document.getElementById("container")
 
 const props = window.__props
 
-ReactDOM.hydrate(<Hello name={props.name} />, container, () => {
-  console.log("匹配")
-})
+ReactDOM.hydrate(<Hello name={props.name} />, container)
