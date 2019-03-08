@@ -18,7 +18,17 @@ app.get("/hello/:name", function(req, res) {
 
 // ssr
 app.get("/hello-ssr/:name", function(req, res) {
-  return res.send(ReactDOM.renderToString(<Hello name={req.params.name} />))
+  class Page extends React.PureComponent {
+    static getInitialProps() {
+      return { name: 3333 }
+    }
+
+    render() {
+      return <div>{this.props.name}</div>
+    }
+  }
+  const props = Page.getInitialProps()
+  return res.send(ReactDOMServer.renderToString(<Page {...props} />))
 })
 
 app.get("/hello-ssr-hydrate/:name", function(req, res) {
@@ -27,7 +37,8 @@ app.get("/hello-ssr-hydrate/:name", function(req, res) {
     <Hello name={req.params.name} />
   )
 
-  let content = fs.readFileSync("./index.html", "utf8")
+  const props = Page.getInitialProps()
+  let content = fs.readFileSync(<Page {...props} />, "utf8")
 
   // 将页面中主要的部分替换
   content = content.replace("{{app}}", reactString)
