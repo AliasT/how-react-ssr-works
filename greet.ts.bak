@@ -1,0 +1,5 @@
+function greet(name: string, age: number) {
+  console.log(name)
+}
+
+greet("xiaoma", 4)

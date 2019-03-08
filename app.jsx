@@ -4,6 +4,10 @@ import React from "react"
 import ReactDOM from "react-dom"
 import Hello from "./hello.jsx"
 
+// import greet from "./greet"
+
+// greet()
+
 const container = document.getElementById("container")
 
 const props = window.__props
