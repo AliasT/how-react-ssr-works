@@ -18,9 +18,9 @@
     "react-dom": "^16.13.1",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
-    "ts-loader": "^7.0.5",
+    "ts-loader": "^9.4.2",
     "ts-node": "^8.10.2",
     "typescript": "^3.9.3",
-    "webpack": "4.29.5"
+    "webpack": "5.75.0"
   }
 }
